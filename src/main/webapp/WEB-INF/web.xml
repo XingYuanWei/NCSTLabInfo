@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+	<!-- IOC 容器位置目录 -->
+    <context-param>
+        <param-name>contextConfigLocation</param-name>
+        <param-value>
+            classpath:spring.xml
+            classpath:shiro.xml
+        </param-value>
+    </context-param>
+    <!-- Spring Application Context Listener -->
+    <listener>
+        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+    </listener>
+
+    <listener>
+        <listener-class>com.umi361._init.ProjectInitContextListener</listener-class>
+    </listener>
+
+    <filter-mapping>
+        <filter-name>initialFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
+
+
+
+<!--
+    ShiroSecurity 开始
+-->
+    <!-- 使用 spring 集成环境下不需要 -->
+    <!--<listener>-->
+        <!--<listener-class>org.apache.shiro.web.env.EnvironmentLoaderListener</listener-class>-->
+    <!--</listener>-->
+
+    <filter>
+        <filter-name>shiroFilter</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+        <init-param>
+            <param-name>targetFilterLifecycle</param-name>
+            <param-value>true</param-value>
+        </init-param>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>shiroFilter</filter-name>
+        <!-- 必须为 /* -->
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>INCLUDE</dispatcher>
+        <dispatcher>ERROR</dispatcher>
+        <dispatcher>ASYNC</dispatcher>
+    </filter-mapping>
+
+
+<!--
+    Log4j 开始
+ -->
+    <context-param>
+        <!-- Name for LoggerContext -->
+        <param-name>log4jContextName</param-name>
+        <param-value>NCSTLabInfo</param-value>
+    </context-param>
+    <context-param>
+        <!-- Location -->
+        <param-name>log4jConfiguration</param-name>
+        <param-value>classpath:log4j2.xml</param-value>
+    </context-param>
+
+    <!-- Log4j Listener -->
+    <listener>
+        <listener-class>org.apache.logging.log4j.web.Log4jServletContextListener</listener-class>
+    </listener>
+
+    <filter>
+        <filter-name>log4jServletFilter</filter-name>
+        <filter-class>org.apache.logging.log4j.web.Log4jServletFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>log4jServletFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+        <dispatcher>INCLUDE</dispatcher>
+        <dispatcher>ERROR</dispatcher>
+        <dispatcher>ASYNC</dispatcher><!-- Servlet 3.0 w/ disabled auto-initialization only; not supported in 2.5 -->
+    </filter-mapping>
+<!--
+    Log4j 结束
+ -->
+
+
+    <filter-mapping>
+        <filter-name>wechatShowAccessFilter</filter-name>
+        <url-pattern>/wechat/show.jsp</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>showDataFilter</filter-name>
+        <url-pattern>/wechat/show.jsp</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>registerFilter</filter-name>
+        <url-pattern>/wechat/register.jsp</url-pattern>
+    </filter-mapping>
+
+
+
+    <servlet>
+		<servlet-name>main</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>main</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+    <servlet>
+        <servlet-name>wechat</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>wechat</servlet-name>
+        <url-pattern>/wechat/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>panel</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <load-on-startup>3</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>panel</servlet-name>
+        <url-pattern>/panel/*</url-pattern>
+    </servlet-mapping>
+
+</web-app>

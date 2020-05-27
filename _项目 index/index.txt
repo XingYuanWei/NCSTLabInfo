@@ -1,0 +1,28 @@
+_文档
+    存放项目的主要文档
+_项目 index
+    存放项目的结构和功能索引，以及数据交互 API、后台 URL 等
+src
+    _tools
+        基于单元测试 testNG 架构的工具类，例如导入临时数据，批量生成 url 等；详见工具类说明
+    main
+        工程目录，仅存放编译发   maven 配置文件布的类库
+        包括：
+        resources：发布后 classpath 下的资源文件，存放配置等信息
+        webapp：web 应用目录
+            lib：存放各种 WEB 资源库
+            static：存放各种静态资源
+            WEB-INF
+                views：存放所有需要业务逻辑预处理的 jsp 视图
+                    wechat：
+                        show.jsp：科联、社团文章活动等对外展示的视图
+                        qr.jsp：用户没有从微信访问 show.jsp 视图时的提示页面
+                        register.jsp：用户没有填写过基本信息时的登记页面
+                    panel：后台控制面板
+                        index.jsp
+    test
+        单元测试目录，基于 testNG，根据惯用法，包结构与 main 应当保持一致
+
+.gitignore
+    git 忽略文件目录
+pom.xml

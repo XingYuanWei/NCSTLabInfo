@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager"
+          p:cacheManager-ref="cacheManager">
+        <property name="authenticator" ref="authenticator"/>
+        <property name="realms">
+            <list>
+                <ref bean="shiroRealm"/>
+                <ref bean="secondRealm"/>
+            </list>
+        </property>
+    </bean>
+    <!-- session 管理方式 -->
+    <!--p:sessionManager="native"-->
+
+    <bean id="authenticator" class="org.apache.shiro.authc.pam.ModularRealmAuthenticator">
+        <property name="authenticationStrategy">
+            <bean class="org.apache.shiro.authc.pam.AllSuccessfulStrategy"/>
+        </property>
+    </bean>
+
+    <!-- 配置一个 cache manager，使用 hibernate 的 ehcache -->
+    <bean id="cacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager"
+          p:cacheManagerConfigFile="classpath:ehcache.xml"/>
+
+    <!-- 配置一个基于 MD5 加密方法的 CredentialsMatcher -->
+    <bean id="md5CredentialsMatcher" class="org.apache.shiro.authc.credential.HashedCredentialsMatcher"
+          p:hashAlgorithmName="MD5"
+          p:hashIterations="5"/>
+
+    <bean id="sha1CredentialsMatcher" class="org.apache.shiro.authc.credential.HashedCredentialsMatcher"
+          p:hashAlgorithmName="SHA1"
+          p:hashIterations="10"/>
+
+    <!-- 配置 Realm -->
+    <bean id="shiroRealm" class="com.umi361._init.ShiroRealm"
+          p:credentialsMatcher-ref="md5CredentialsMatcher"/>
+
+    <bean id="secondRealm" class="com.umi361._init.SecondRealm"
+          p:credentialsMatcher-ref="sha1CredentialsMatcher"/>
+
+<!--
+    spring 相关配置
+-->
+    <!-- 后置处理器：为 spring 配置的 shiro 对象自动管理生命周期，自动调用和管理 init 与 destroy 相关方法 -->
+    <bean id="lifeCycleBeanPostProccessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor"/>
+
+    <!-- 启用 IOC 容器支持 shiro 注解 -->
+    <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
+          depends-on="lifeCycleBeanPostProccessor"/>
+    <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor"
+          p:securityManager-ref="securityManager"/>
+
+<!--
+    配置 shiro filter 的 factory-bean：注意 id 必须和 web.xml 文件中配置的 DelegatingFilterProxy 的 filter-name 一致
+-->
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean"
+          p:securityManager-ref="securityManager"
+          p:loginUrl="${shiro.loginUrl}"
+          p:successUrl="${shiro.successUrl}"
+          p:unauthorizedUrl="${shiro.unauthorizedUrl}"
+          p:filterChainDefinitions="${shiro.filterUrls}">
+        <!-- 配置 filter 所保护的页面授权 -->
+    </bean>
+
+
+</beans>

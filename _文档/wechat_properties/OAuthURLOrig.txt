@@ -1,0 +1,13 @@
+//原始 OAuthURLOrig 文件的格式为：第一行 url、第二行 state 参数、第三行 base 或 userinfo 表示 scope
+
+// 测试用例，如果没有 state 可以不写
+/wechat/show.jsp
+userinfo
+
+/wechat/show.jsp
+state:base
+base
+
+/wechat/show.jsp
+state:userinfo
+userinfo

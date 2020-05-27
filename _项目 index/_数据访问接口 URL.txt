@@ -1,0 +1,10 @@
+全局 ContextPath 限定为：
+    www.umi361.com/ncstlabinfo/wechat（微信端）
+    www.umi361.com/ncstlabinfo/panel（后台部分）
+    www.umi361.com/ncstlabinfo/api（前后台交互 API）
+    www.umi361.com/ncstlabinfo/... 以及 www.umi361.com/ncstlabinfo （还在策划）
+
+show 页面：
+API
+    根据参数 id 和 index 获取对应 lab_id 和 index_name 的
+        www.umi361.com/ncstlabinfo/api/labpassage?id={$lab_id}&index={$index_name}

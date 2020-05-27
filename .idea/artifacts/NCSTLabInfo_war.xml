@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="NCSTLabInfo:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>NCSTLabInfo</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="NCSTLabInfo-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="NCSTLabInfo:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,3 @@
+！wechat 服务器初次申请 token 验证接口
+ref( TokenValidatorController )
+/serverValidate

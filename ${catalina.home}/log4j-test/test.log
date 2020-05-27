@@ -1,0 +1,18 @@
+21:23:39.847 ERROR com.umi361._wechatBasicService.accessToken.AccessTokenAuthenticator 238 requestForAccessToken - Tue Sep 05 21:23:39 CST 2017	JSON returned from request for access_token did not obtain access_token
+21:23:39.847 ERROR com.umi361._wechatBasicService.accessToken.AccessTokenAuthenticator 239 requestForAccessToken - 	ErrorCode: 40164; ErrorMsg: 调用接口的IP地址不在白名单中，请在接口IP白名单中进行设置
+	invalid ip 183.199.2.197, not in whitelist hint: [4maWJa0821e575]
+21:23:39.847 ERROR com.umi361._wechatBasicService.accessToken.AccessTokenAuthenticator 156 refreshToken - Tue Sep 05 21:23:39 CST 2017	Refresh went wrong. To refresh access_token, authenticator is trying once more
+21:23:39.915 ERROR com.umi361._wechatBasicService.accessToken.AccessTokenAuthenticator 238 requestForAccessToken - Tue Sep 05 21:23:39 CST 2017	JSON returned from request for access_token did not obtain access_token
+21:23:39.915 ERROR com.umi361._wechatBasicService.accessToken.AccessTokenAuthenticator 239 requestForAccessToken - 	ErrorCode: 40164; ErrorMsg: 调用接口的IP地址不在白名单中，请在接口IP白名单中进行设置
+	invalid ip 183.199.2.197, not in whitelist hint: [pFd8cA0821e606]
+21:23:39.915 ERROR com.umi361._wechatBasicService.accessToken.AccessTokenAuthenticator 156 refreshToken - Tue Sep 05 21:23:39 CST 2017	Refresh went wrong. To refresh access_token, authenticator is trying once more
+21:23:39.978 ERROR com.umi361._wechatBasicService.accessToken.AccessTokenAuthenticator 238 requestForAccessToken - Tue Sep 05 21:23:39 CST 2017	JSON returned from request for access_token did not obtain access_token
+21:23:39.978 ERROR com.umi361._wechatBasicService.accessToken.AccessTokenAuthenticator 239 requestForAccessToken - 	ErrorCode: 40164; ErrorMsg: 调用接口的IP地址不在白名单中，请在接口IP白名单中进行设置
+	invalid ip 183.199.2.197, not in whitelist hint: [Z10ida0821e544]
+21:23:39.978 ERROR com.umi361._wechatBasicService.accessToken.AccessTokenAuthenticator 156 refreshToken - Tue Sep 05 21:23:39 CST 2017	Refresh went wrong. To refresh access_token, authenticator is trying once more
+21:23:40.046 ERROR com.umi361._wechatBasicService.accessToken.AccessTokenAuthenticator 238 requestForAccessToken - Tue Sep 05 21:23:40 CST 2017	JSON returned from request for access_token did not obtain access_token
+21:23:40.046 ERROR com.umi361._wechatBasicService.accessToken.AccessTokenAuthenticator 239 requestForAccessToken - 	ErrorCode: 40164; ErrorMsg: 调用接口的IP地址不在白名单中，请在接口IP白名单中进行设置
+	invalid ip 183.199.2.197, not in whitelist hint: [0821e606]
+21:23:40.046 ERROR com.umi361._wechatBasicService.accessToken.AccessTokenAuthenticator 247 requestForAccessToken - Tue Sep 05 21:23:40 CST 2017	warning, progress stuck on AccessTokenAuthenticator
+21:23:40.062 ERROR com.umi361._wechatBasicService.accessToken.AccessTokenAuthenticator 182 getAccessTokenSafely - Tue Sep 05 21:23:40 CST 2017	access_token invalid, scheduled task may have crashed, trying to return from history
+21:23:40.062 ERROR com.umi361._wechatBasicService.accessToken.AccessTokenAuthenticator 190 getAccessTokenSafely - Tue Sep 05 21:23:40 CST 2017	Failed to return AccessToken safely, returned null

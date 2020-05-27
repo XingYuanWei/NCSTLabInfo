@@ -1,0 +1,15 @@
+scope: userinfo
+state arg: null
+http://ncstlabinfo.umi361.com/ncstlabinfo/wechat/show.jsp
+https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxbdc4220ab4d6e76e&redirect_uri=http%3A%2F%2Fncstlabinfo.umi361.com%2Fncstlabinfo%2Fwechat%2Fshow.jsp&response_type=code&scope=snsapi_userinfo&state=#wechat_redirect
+
+scope: base
+state arg: base
+http://ncstlabinfo.umi361.com/ncstlabinfo/wechat/show.jsp
+https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxbdc4220ab4d6e76e&redirect_uri=http%3A%2F%2Fncstlabinfo.umi361.com%2Fncstlabinfo%2Fwechat%2Fshow.jsp&response_type=code&scope=snsapi_base&state=base#wechat_redirect
+
+scope: userinfo
+state arg: userinfo
+http://ncstlabinfo.umi361.com/ncstlabinfo/wechat/show.jsp
+https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxbdc4220ab4d6e76e&redirect_uri=http%3A%2F%2Fncstlabinfo.umi361.com%2Fncstlabinfo%2Fwechat%2Fshow.jsp&response_type=code&scope=snsapi_userinfo&state=userinfo#wechat_redirect
+

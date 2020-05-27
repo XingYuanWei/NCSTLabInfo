@@ -1,0 +1,13 @@
+{  "button":[
+    {
+      "type":"view",
+      "name":"frp",
+      "url":"http://frp.icesea.io/ncstlabinfo/wechat/register_final.jsp"
+    },
+    {
+      "type":"view",
+      "name":"ngrok",
+      "url":"https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx87b4a14452135c7c&redirect_uri=http%3A%2F%2Fngrok.icesea.io%2Fncstlabinfo%2Fwechat%2Fshow.jsp&response_type=code&scope=snsapi_base&state=base#wechat_redirect"
+    }
+  ]
+}

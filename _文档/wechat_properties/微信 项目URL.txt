@@ -1,0 +1,8 @@
+wechat.*.*:80
+
+微信公众号初次验证拦截 URL
+/wechat/serverValidate
+
+微信网页按钮请求拦截 URL
+/wechat/redirect
+

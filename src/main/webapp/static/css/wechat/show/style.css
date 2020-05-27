@@ -1,0 +1,147 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	/*	min-height: 2000px; 设置段落最小高度*/
+	/*  padding-top: 70px; 设置上内边距*/
+	font-family: SimHei, Verdana, Geneva, sans-serif;
+	overflow-x: hidden;
+}
+
+body, html {
+	height: 100%;
+	background-color: whitesmoke;
+	/*position: relative;*/
+}
+
+.background {
+	width: 100%;
+	z-index: 997;
+	display: block;
+	text-align: center;
+	padding-left: 12px;
+	background-color: whitesmoke;
+}
+
+/* 优科优社标题样式 */
+.head {
+	width: 100%;
+	background: transparent;
+	margin: 80px auto 40px auto;
+	text-align: center;
+}
+.head img {
+	max-width: 80%;
+}
+
+.mainContent {
+	padding: 0;
+	width: 100%;
+}
+
+/* 主要内容样式布局 */
+
+/* 面板背景颜色设置 */
+.panel-default {
+	box-shadow: 2px 2px 6px #888888;
+	overflow: hidden;
+}
+.panel-default .panel-heading {
+	color: #999;
+}
+.panel-default .panel-body {
+	background: rgb(255, 253, 250);
+}
+.panel-default .panel-footer {
+	background: #eee;
+}
+
+/* 对应每个实验室介绍文章的大标题：实验室名称 */
+.passage .title {
+	font-weight: bolder;
+	color: dodgerblue;
+	text-align: center;
+	margin: 20px 0 40px 0;
+}
+
+.passage p {
+	text-indent: 2em;
+}
+
+/* 对应每个实验室介绍文章的子一级标题 */
+.passage .header {
+	position: relative;
+	margin-top: 35px;
+	margin-bottom: 35px;
+}
+.passage .header h3 {
+	color: rgb(56, 118, 66);
+	font-size: 28px;
+}
+.passage .header:after {
+	content:"";
+	background: rgb(101, 206, 167);
+	position: absolute;
+	bottom: -10px;
+	left: 0;
+	height: 6px;
+	width: 70%;
+	max-width: 240px;
+}
+
+.passage .panel-body p {
+	font-size: 15px;
+}
+
+/* 子一级标题下的子二级标题 */
+.passage .topic h3 {
+	text-indent: 1em;
+}
+
+.passage .topic {
+	position: relative;
+	margin-bottom: 20px;
+}
+
+/* 文章下的响应式图片 配合图片栅格使用 */
+.passage img {
+	float: left;
+	overflow: hidden;
+}
+
+footer {
+	background-color: #333;
+	margin-top: 30px;
+	width: 100%;
+	color: #ffffff;
+	height: 50px;
+	border-radius: 50% 50% 0 0;
+}
+
+.copyright {
+	height: 40px;
+	line-height: 40px;
+	vertical-align: center;
+	text-align: center;
+	margin: 0;
+	background: dodgerblue;
+	color: white;
+}
+
+.copyright p {
+	margin: 0;
+}
+
+.copyright a {
+	color: white;
+}
+
+.copyright a:hover {
+	color: white;
+	text-decoration: underline;
+}
+
+.photoset-grid-lightbox {
+	visibility: hidden;
+	overflow: hidden;
+}

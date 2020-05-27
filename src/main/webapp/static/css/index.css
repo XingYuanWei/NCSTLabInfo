@@ -1,0 +1,124 @@
+@font-face {
+	font-family: Inziu;
+}
+
+@media only screen and (min-width: 1000px) {
+	body {
+		background-image: linear-gradient(to right, black 60%,white 90%), url(http://wonder4.co/wp-content/uploads/2015/07/specialty-coffee-cappuccino-latte-hot-chocolate-mocha2.jpg);
+		background-size: cover;
+		background-blend-mode: overlay;
+		margin: 0;
+		font-family:"Microsoft YaHei",微软雅黑, "MicrosoftJhengHei", 华文细黑, STHeiti, MingLiu, "sans-serif";
+	}
+	div#header h1 {
+		font-size: 4em;
+		color: lightgoldenrodyellow;
+		text-align: center;
+		text-shadow: 0 -2px 1px peachpuff,0 3px 6px lightgoldenrodyellow;
+	}
+	div#material h2, h3, h4 {
+		text-shadow: 0 -2px 1px dodgerblue,0 3px 6px lightskyblue;
+		text-align: center;
+	}
+	div#material {
+		background-color: rgba(60,60,60,0.4);
+		border: 3px dashed saddlebrown;
+		border-radius: 2em;
+		color: mintcream;
+		padding: 1em 2em;
+		display: table-cell;
+	}
+	div#material img {
+		width: 160px;
+		height: 160px;
+		vertical-align: top;
+		padding-right: 6px;
+		float: left;
+	}
+	div#material p {
+		line-height: 12px;
+		margin: 10px 0 10px 0;
+		text-indent: 2em;
+	}
+	div#material div.capital {
+		height: 36px;
+		font-size: 3em;
+		font-weight: bold;
+		line-height: 36px;
+		font-family: "Impact", fantasy;
+		float: left;
+		vertical-align: middle;
+	}
+	div#material em {
+		font-style: italic;
+		font-weight: bold;
+		color: aquamarine;
+	}
+	div#material a {
+		line-height: 200%;
+	}
+	div#sideBar{
+		background-color:rgba(240,190,170,0.3);
+		border: 3px dotted lightgray;
+		border-radius: 2em;
+		padding: 10px 10px 10px 10px;
+		font-family: sans-serif;
+		text-align: center;
+		width: 450px;
+		display: table-cell;
+		vertical-align: top;
+	}
+	div#sideBar img {
+		width: 300px;
+		height: 200px;
+	}
+	div#sideBar {
+		font-family: "Courier New", Courier, monospace;
+		color: lightcyan;
+	}
+	div#sideBar p.Introduction {
+		font-family: Inziu, "Courier Prime", monospace;
+		font-size: large;
+		font-weight: bold;
+		color: white;
+		text-align: justify;
+		background-color: dodgerblue;
+		border-style: dashed;
+		border-top-left-radius: 2em;
+		border-color: blue;
+		margin: 0em 2em 0em 1em;
+		padding: 2em 2em 2em 4em;
+		text-indent: -2em;
+	}
+	div#footer {
+		background-color: #675c47;
+		color:#efe5d0;
+		text-align: center;
+		padding:15px;
+		margin: 0 10px 10px 10px;
+	}
+	div#tablecontent {
+		display:table;
+		border-spacing: 10px;
+	}
+	div#tablerow {
+		display:table-row;
+	}
+	a:link {
+		color: lightgreen;
+	}
+	a:visited {
+		color: orangered;
+		text-shadow: 0 -2px 1px red,0 1px 1px yellow;
+	}
+	a:hover {
+		color: yellow;
+		text-shadow: 0 -2px 1px deepskyblue,0 1px 1px greenyellow;
+	}
+}
+
+@media only screen and (max-width: 999px) {
+	body {
+		margin: 0;
+	}
+}

@@ -1,0 +1,77 @@
+@charset "utf-8";
+/* register 页面的自定义样式 */
+body {
+	padding: 10px 10px 0 10px;
+	margin: 10px;
+	background-color: whitesmoke;
+	color: #333333;
+	background-size: 100% 100%;
+}
+
+.titleOne {
+	text-align: center;
+	font-size: 34px;
+	font-weight: 300;
+	color: #3cc51f;
+	margin: 0 15%;
+}
+
+.titleTwo {
+	text-align: left;
+	font-size: 20px;
+	color: #3d4145;
+	font-weight: 200;
+}
+
+.moduleDistance {
+	height: 15px;
+}
+
+/* 跳过信息的提示部分 */
+.tip {
+	font-family: SimHei, Verdana, Geneva, sans-serif;
+	font-size: 15px;
+	text-align: left;
+	color: chocolate
+}
+
+/* 显示字段验证正确的样式 */
+.correct {
+	border: 1px;
+	padding-top: 5px;
+	color: green;
+	font-size: 17px;
+	font-family: SimHei, Verdana, Geneva, sans-serif;
+}
+/* 学号未满12位样式 */
+.warn {
+	border: 1px;
+	padding-top: 5px;
+	color: darkorange;
+	font-size: 17px;
+	font-family: SimHei, Verdana, Geneva, sans-serif;
+}
+/* 显示字段验证错误的样式 */
+.error {
+	border: 1px;
+	padding-top: 5px;
+	color: rgba(240, 20, 40, 1);
+	font-size: 17px;
+	font-family: SimHei, Verdana, Geneva, sans-serif;
+}
+
+/* 验证信息错误 此时文本框显示的样式 */
+.shadowError {
+	transition: border linear .2s, box-shadow linear .5s;
+	outline: none;
+	border-color: red;
+	box-shadow: 0 0 10px orangeRed;
+}
+
+/* 验证信息正确 此时文本框显示的样式 */
+.shadowCorrect {
+	transition: border linear .01s, box-shadow linear .5s;
+	outline: none;
+	border-color: rgba(34, 139, 34, .75);
+	box-shadow: 0 0 10px rgba(144, 238, 144, .5);
+}

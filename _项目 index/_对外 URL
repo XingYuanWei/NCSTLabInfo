@@ -1,0 +1,6 @@
+www.umi361.com/ncstlabinfo/wehcat/show.jsp
+www.umi361.com/ncstlabinfo/wehcat/register.jsp
+
+    测试 url for 魏兴源：www.umi361.com/ncstlabinfo/wehcat/register_demo.jsp
+    jsp 页面位置：webapp/WEB-INF/views/wechat/register_demo.jsp
+    转发 Controller 位置 com.umi361.controller.wechat.RegisterDemoController
